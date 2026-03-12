@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace EfCodeFirstExampleP43.Models;
 
+// Many-to-Many relationship between Product and Tag
+// Tag *----* ProductTag  -- Product 
+// ProductId, TagId      
 
-//   Category 1----* Product *----1 Brand         
-
-public class Category
+public class Tag
 {
     public int Id { get; set; }
     [Required]
-    [StringLength(100)]
-    public string Name { get; set; }
-
+    [StringLength(50)]
+    public string Name { get; set; } // New, Popular, Sale, Discount, etc.
     public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }

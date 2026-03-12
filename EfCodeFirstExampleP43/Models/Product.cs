@@ -18,4 +18,7 @@ public class Product
 
     public virtual Category Category { get; set; }
     public virtual Brand Brand { get; set; }
+
+    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
+    public virtual ICollection<Tag> Tags { get; set; } = new List<Tag>();
 }
